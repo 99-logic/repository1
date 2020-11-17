@@ -1,0 +1,46 @@
+import javax.microedition.lcdui.*;
+import javax.microedition.midlet.*;
+import java.io.*;
+
+public class AI extends MIDlet
+{
+	Display display;
+	MainCanvas mc;
+	public AI(){
+		display=Display.getDisplay(this);
+		mc=new MainCanvas();
+		display.setCurrent(mc);
+	}
+	public void startApp(){
+	}
+	public void destroyApp(boolean unc){
+	}
+	public void pauseApp(){
+	}
+}
+class MainCanvas extends Canvas
+{
+	Image currentImage,img1,img2;
+	public MainCanvas(){
+		try
+		{
+			img1=Image.createImage("/sayo10.png");
+			img2=Image.createImage("/sayo12,png");
+			currentImage=img1;
+		}
+		catch (IOException e)
+		{
+			e.printStackTrace();
+		}
+		
+	}
+	public void paint(Graphics g){
+		g.setColor(0,0,0);
+		g.fillRect(0,0,getWidth(),getHeight());
+		g.drawImage(currentImage,120,120,0);
+	}
+
+	public {
+
+	}
+}
